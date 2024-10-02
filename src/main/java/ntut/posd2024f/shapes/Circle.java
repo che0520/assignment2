@@ -18,5 +18,20 @@ public class Circle implements Shape {
     public double perimeter() {
         return 2 * radian * 3.14;
     }
+    
+    @Override
+    public void add(Shape s) {}
+    
+    @Override
+    public NullIterator iterator() {
+        return new ShapeIterator();
+    }
+
+    private class ShapeIterator implements NullIterator {
+        public boolean hasNext() {return false;}
+        public Shape next() {return null;}; 
+    }
+
+
 
 }

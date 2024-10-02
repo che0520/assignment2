@@ -1,5 +1,7 @@
 package ntut.posd2024f.shapes;
 
-public class NullIterator {
-    
+public interface NullIterator {
+    public boolean hasNext();
+    public Shape next();
+
 }

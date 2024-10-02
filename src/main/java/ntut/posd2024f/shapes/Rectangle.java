@@ -1,6 +1,6 @@
 package ntut.posd2024f.shapes;
 
-public class Rectangle {
+public class Rectangle implements Shape {
     private double edge1, edge2;
    
 
@@ -20,4 +20,17 @@ public class Rectangle {
         return 2 * (edge1 + edge2);
     }
 
+    @Override
+    public void add(Shape s) {}
+
+
+    @Override
+    public NullIterator iterator() {
+        return new ShapeIterator();
+    }
+
+    private class ShapeIterator implements NullIterator {
+        public boolean hasNext() {return false;}
+        public Shape next() {return null;}; 
+    }
 }
