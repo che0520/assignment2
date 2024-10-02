@@ -10,9 +10,7 @@ public class Circle implements Shape {
         radian = args[0];
 
     }
-    public int test() {
-        return 10;
-    }
+
     public double area() {
         return radian * radian * 3.14;
     }
