@@ -21,8 +21,9 @@ public class Rectangle implements Shape {
     }
 
     @Override
-    public void add(Shape s) {}
-
+    public void add(Shape s) throws ShapeException {
+        throw new ShapeException("Illegal Operaton");
+    }
 
     @Override
     public NullIterator iterator() {

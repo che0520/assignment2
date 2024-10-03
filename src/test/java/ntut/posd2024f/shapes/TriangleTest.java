@@ -19,8 +19,9 @@ public class TriangleTest {
         TwoDimensionalVector v1 = new TwoDimensionalVector(3.0, 0.0);
         TwoDimensionalVector v2 = new TwoDimensionalVector(0.0, 4.0);
         
+        
 
-        ShapeException excep = assertThrows(ShapeException.class, ()->{new Triangle(v1, v2, v2);});
+        ShapeException excep = assertThrows(ShapeException.class, ()->{new Triangle(v1, v2);});
         assertEquals("It's not a triangle!", excep.toString());     
     }
 
@@ -40,8 +41,10 @@ public class TriangleTest {
     void TrianglePerimeterArea2() {
         try {
             TwoDimensionalVector v1 = new TwoDimensionalVector(3.0, 0.0);
-            TwoDimensionalVector v2 = new TwoDimensionalVector(0.0, 3.0);    
-            Triangle c = new Triangle(v1, v2);
+            TwoDimensionalVector v2 = new TwoDimensionalVector(0.0, 3.0);
+            TwoDimensionalVector v3 = new TwoDimensionalVector(0.0, 0.0);    
+    
+            Triangle c = new Triangle(v1, v2, v3);
             assertEquals(6 + Math.sqrt(18), c.perimeter());
             assertEquals(4.5, c.area());
             } catch (ShapeException e) {
