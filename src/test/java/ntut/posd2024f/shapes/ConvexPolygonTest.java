@@ -19,6 +19,21 @@ public class ConvexPolygonTest {
 
     }
 
+    @Test 
+    public void ConvexPolygonCreateDirection() {
+        TwoDimensionalVector v1 = new TwoDimensionalVector(0.5, 0.5);
+        TwoDimensionalVector v2 = new TwoDimensionalVector(-0.5, 0.5);
+        TwoDimensionalVector v3 = new TwoDimensionalVector(-0.5, -0.5);
+        TwoDimensionalVector v4 = new TwoDimensionalVector(0.5, -0.5);
+
+        try {
+        ConvexPolygon cp = new ConvexPolygon(v1, v2, v3, v4);
+        } catch (ShapeException e) {
+            System.out.println(e);
+        }
+
+    }
+
 
     @Test
     public void ConvexPolygonPerimeter() {

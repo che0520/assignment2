@@ -3,13 +3,13 @@ package ntut.posd2024f.shapes;
 import java.util.ArrayList;
 
 public class ConvexPolygon implements Shape {
+
     private ArrayList<TwoDimensionalVector> edges = new ArrayList<TwoDimensionalVector>();
     private TwoDimensionalVector centroid;
    
 
     public ConvexPolygon(TwoDimensionalVector... args) throws ShapeException{
-        if (false)
-            throw new ShapeException("It's not a convex polygon!");
+     
         for (TwoDimensionalVector arg : args)
             edges.add(arg);
         
@@ -20,8 +20,21 @@ public class ConvexPolygon implements Shape {
         }
         centroid = new TwoDimensionalVector(x / edges.size(), y / edges.size());
 
+        int n = edges.size();
+        double  pre = 0.0, curr;
+        boolean signal = true;
+        for (int i = 0; i < n; i++) {
+            TwoDimensionalVector u = edges.get((i + 1) % n).subtract(edges.get(i));
+            TwoDimensionalVector v = edges.get((i + 2) % n).subtract(edges.get(i));
+            curr = u.cross(v);
+            if (curr * pre < 0.0) signal = false;
+            pre = curr;
+            if (signal == false) break;
+        }
 
 
+        if (signal == false)
+        throw new ShapeException("It's not a convex polygon!");
 
 
     }
