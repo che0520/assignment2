@@ -9,7 +9,7 @@ public class CircleTest {
     void CircleCreate() 
     {
         ShapeException excep = assertThrows(ShapeException.class, ()->{new Circle(1.0, 1.0);});
-        assertEquals("ntut.posd2024f.shapes.ShapeException: " + "It's not a circle!", excep.toString());
+        assertEquals("It's not a circle!", excep.toString());
         
       
      
