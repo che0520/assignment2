@@ -27,7 +27,7 @@ public class Rectangle implements Shape {
 
     @Override
     public NullIterator iterator() {
-        return new ShapeIterator();
+        return new NullIterator();
     }
 
     private class ShapeIterator implements NullIterator {

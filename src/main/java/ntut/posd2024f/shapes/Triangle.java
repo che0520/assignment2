@@ -1,5 +1,9 @@
 package ntut.posd2024f.shapes;
 
+import java.util.List;
+
+
+
 public class Triangle implements Shape {
     private double s1, s2, s3;
     private TwoDimensionalVector v1 = null , v2 = null, v3 = null;
@@ -14,12 +18,12 @@ public class Triangle implements Shape {
     }
 
 
-    public Triangle(TwoDimensionalVector... args) throws ShapeException{
-        if (args.length != 2)
+    public Triangle(List<TwoDimensionalVector> args) throws ShapeException{
+        if (args.size() != 3)
             throw new ShapeException("It's not a triangle!");
-        v1 = args[0];
-        v2 = args[1];
-        v3 = args[2];
+        v1 = args.get(0);
+        v2 = args.get(1);
+        v3 = args.get(2);
         s1 = v2.subtract(v1).length();
         s2 = v3.subtract(v2).length();
         s3 = v1.subtract(v3).length();

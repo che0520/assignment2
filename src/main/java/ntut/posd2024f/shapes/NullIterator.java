@@ -1,7 +1,9 @@
 package ntut.posd2024f.shapes;
-
-public interface NullIterator {
-    public boolean hasNext();
-    public Shape next();
+import java.util.Iterator;
+public class NullIterator implements Iterator<Shape> {
+    @Override
+    public boolean hasNext(){return false;};
+    @Override
+    public Shape next(){return null;};
 
 }
