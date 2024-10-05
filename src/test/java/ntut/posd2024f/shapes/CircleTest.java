@@ -2,7 +2,6 @@ package ntut.posd2024f.shapes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
 
 public class CircleTest {
@@ -10,7 +9,7 @@ public class CircleTest {
     void CircleCreate() 
     {
         ShapeException excep = assertThrows(ShapeException.class, ()->{new Circle(1.0, 1.0);});
-        assertEquals("It's not a circle!", excep.toString());
+        assertEquals("ntut.posd2024f.shapes.ShapeException: " + "It's not a circle!", excep.toString());
         
       
      

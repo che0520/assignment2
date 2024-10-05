@@ -8,7 +8,7 @@ public class ConvexPolygon implements Shape {
     private TwoDimensionalVector centroid;
    
 
-    public ConvexPolygon(TwoDimensionalVector... args) throws ShapeException{
+    public ConvexPolygon(ArrayList<TwoDimensionalVector> args) throws ShapeException{
      
         for (TwoDimensionalVector arg : args)
             edges.add(arg);

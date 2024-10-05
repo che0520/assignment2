@@ -15,25 +15,38 @@ public class Sort {
 
 
     private static class ByAreaAscending implements Comparator<Shape> {
-        public int compare(Shape left, Shape right) {return 0;}
+        public int compare(Shape left, Shape right) {
+            
+            
+            return (left.area() <= right.area()) ? -1 : 1;}
     }
 
     private static class ByAreaDescending implements Comparator<Shape> {
-        public int compare(Shape left, Shape right) {return 0;}
+        public int compare(Shape left, Shape right) {
+
+            return (left.area() >= right.area()) ? -1 : 1;
+        }
     }
 
 
 
     private static class ByPerimeterDescending implements Comparator<Shape> {
-        public int compare(Shape left, Shape right) {return 0;}
+        public int compare(Shape left, Shape right) {
+            return (left.perimeter() <= right.perimeter()) ? 1 : -1;
+        }
     }
+    
 
 
 
     private static class ByPerimeterAscending implements Comparator<Shape> {
-        public int compare(Shape left, Shape right) {return 0;}
-    }
+        public int compare(Shape left, Shape right) {
 
+            return (left.perimeter() >= right.perimeter()) ? 1 : -1;
+        }
+    }
+    
+}
 
 
 
@@ -55,4 +68,4 @@ public class Sort {
     //         System.out.println(elm.perimeter());
     // }
     
-}
+
