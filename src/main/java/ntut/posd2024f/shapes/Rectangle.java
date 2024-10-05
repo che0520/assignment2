@@ -1,4 +1,6 @@
 package ntut.posd2024f.shapes;
+import java.util.Iterator;
+
 
 public class Rectangle implements Shape {
     private double edge1, edge2;
@@ -30,8 +32,5 @@ public class Rectangle implements Shape {
         return new NullIterator();
     }
 
-    private class ShapeIterator extends NullIterator {
-        public boolean hasNext() {return false;}
-        public Shape next() {return null;}; 
-    }
+ 
 }

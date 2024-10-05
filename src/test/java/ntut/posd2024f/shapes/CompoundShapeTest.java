@@ -2,6 +2,7 @@ package ntut.posd2024f.shapes;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import java.util.Iterator;
 
 public class CompoundShapeTest {
     @Test
@@ -43,7 +44,7 @@ public class CompoundShapeTest {
         compound1.add(compound2);
         compound1.add(c4);
         
-        NullIterator s = compound1.iterator();
+        Iterator<Shape> s = compound1.iterator();
         while (s.hasNext())
             System.out.println(s.next().area());
 

@@ -66,13 +66,10 @@ public class ConvexPolygon implements Shape {
     
     @Override
     public Iterator<Shape> iterator() {
-        return new ShapeIterator();
+        return new NullIterator();
     }
 
-    private class ShapeIterator extends NullIterator {
-        public boolean hasNext() {return false;}
-        public Shape next() {return null;}; 
-    }
+ 
 
 
 
