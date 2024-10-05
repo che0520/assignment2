@@ -1,7 +1,7 @@
 package ntut.posd2024f.shapes;
 
 import java.util.ArrayList;
-
+import java.util.Iterator;
 
 public class CompoundShape implements Shape {
 
@@ -32,11 +32,11 @@ public class CompoundShape implements Shape {
     }
 
     @Override
-    public NullIterator iterator() {
+    public Iterator<Shape> iterator() {
         return new CompoundIterator(arr);
     }
 
-    private class CompoundIterator implements NullIterator {
+    private class CompoundIterator implements Iterator<Shape> {
         private ArrayList<Shape> arr = new ArrayList<Shape>();
 
         

@@ -2,7 +2,7 @@ package ntut.posd2024f.shapes;
 
 import java.util.List;
 
-
+import java.util.Iterator;
 
 public class Triangle implements Shape {
     private double s1, s2, s3;
@@ -54,12 +54,9 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public NullIterator iterator() {
-        return new ShapeIterator();
+    public Iterator<Shape> iterator() {
+        return new NullIterator();
     }
 
-    private class ShapeIterator implements NullIterator {
-        public boolean hasNext() {return false;}
-        public Shape next() {return null;}; 
-    }
+
 }

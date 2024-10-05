@@ -1,6 +1,7 @@
 package ntut.posd2024f.shapes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ConvexPolygon implements Shape {
 
@@ -64,11 +65,11 @@ public class ConvexPolygon implements Shape {
     }
     
     @Override
-    public NullIterator iterator() {
+    public Iterator<Shape> iterator() {
         return new ShapeIterator();
     }
 
-    private class ShapeIterator implements NullIterator {
+    private class ShapeIterator extends NullIterator {
         public boolean hasNext() {return false;}
         public Shape next() {return null;}; 
     }

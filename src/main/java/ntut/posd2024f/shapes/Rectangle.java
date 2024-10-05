@@ -26,11 +26,11 @@ public class Rectangle implements Shape {
     }
 
     @Override
-    public NullIterator iterator() {
+    public Iterator<Shape> iterator() {
         return new NullIterator();
     }
 
-    private class ShapeIterator implements NullIterator {
+    private class ShapeIterator extends NullIterator {
         public boolean hasNext() {return false;}
         public Shape next() {return null;}; 
     }
