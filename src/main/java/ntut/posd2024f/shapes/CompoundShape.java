@@ -43,7 +43,7 @@ public class CompoundShape implements Shape {
         public CompoundIterator(ArrayList<Shape> x) {
             for (Shape elm : x) {
                 if (elm instanceof CompoundShape){
-                    NullIterator it = elm.iterator();
+                    Iterator<Shape> it = elm.iterator();
                     while(it.hasNext())
                         arr.add(it.next());
                 } else {
