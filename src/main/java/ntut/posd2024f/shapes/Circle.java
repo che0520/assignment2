@@ -29,7 +29,7 @@ public class Circle implements Shape {
         return new ShapeIterator();
     }
 
-    private class ShapeIterator implements NullIterator {
+    private class ShapeIterator extends NullIterator {
         public boolean hasNext() {return false;}
         public Shape next() {return null;}; 
     }
